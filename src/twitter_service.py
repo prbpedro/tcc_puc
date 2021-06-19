@@ -5,43 +5,34 @@ from datetime import timedelta
 from pprint import pprint
 import time
 import uuid
+import glob
+import os
 
 api = None
 
 
-def get_tweets(user_id):
+def get_tweets(user_id, younger):
 
     all_tweets = []
 
     tweets = []
 
-    while(len(tweets) == 0):
-        tweets = api.user_timeline(user_id=user_id,
-                                   count=200,
-                                   exclude_replies='false',
-                                   tweet_mode="extended")
-
-        print(
-            f"Tentativa de raspar tweets, primeira vez - resultado: {len(tweets)} ")
-    all_tweets.extend([t._json for t in tweets])
-    youger = min([i.id for i in tweets]) - 1
-
     retries = 0
     while True:
         tweets = api.user_timeline(user_id=user_id,
                                    count=200,
-                                   max_id=youger,
                                    exclude_replies='false',
-                                   tweet_mode="extended")
+                                   tweet_mode="extended",
+                                   max_id=younger)
 
         retries += 1
 
         print(
-            f"...Tentativa de raspar tweets com id menor do que {youger} - resultado: {len(tweets)} ")
+            f"...Tentativa de raspar tweets com id menor do que {younger} - resultado: {len(tweets)} ")
 
         if len(tweets) > 0:
             all_tweets.extend([t._json for t in tweets])
-            youger = min([i.id for i in tweets]) - 1
+            younger = min([i.id for i in tweets]) - 1
             retries = 0
             print(f"Count de todos os tweets raspados {len(all_tweets)}")
             continue
@@ -54,20 +45,30 @@ def get_tweets(user_id):
 
 
 if(__name__ == '__main__'):
+
+    base_path_to_csv = os.path.join(os.getcwd() + '/eltweets/*.csv')
+    csv_list = glob.glob(base_path_to_csv)
+
+    min_idx = None
+    if (csv_list):
+        # index_col removes the duplicates
+        df_list = [pd.read_csv(csv, index_col='id') for csv in csv_list]
+        df = pd.concat(df_list)
+        min_idx = df.index.min() - 1
+
     auth = tweepy.AppAuthHandler('JxsnGH3OKGAJL3PqvFv8B7fSz',
                                  'hgp8u1ndFlj40GN2G84n1Sf5TXbqPDJ1uTANppwCkIEsxTJtbE')
     api = tweepy.API(auth)
 
     user = api.get_user('elonmusk')
 
-    all_tweets = get_tweets(user.id)
+    all_tweets = get_tweets(user.id, min_idx)
     statuses_count = user.statuses_count
 
     pprint(statuses_count)
     pprint(len(all_tweets))
 
     df = pd.json_normalize(all_tweets)
-
-    df = df[['id', 'created_at', 'full_text', 'retweet_count']]
-
-    df.to_csv('eltweets/' + str(uuid.uuid4()) + '.csv', index=False)
+    if(not df.empty):
+        df = df[['id', 'created_at', 'full_text', 'retweet_count']]
+        df.to_csv('eltweets/' + str(uuid.uuid4()) + '.csv', index=False)
