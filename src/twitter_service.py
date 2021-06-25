@@ -70,5 +70,5 @@ if(__name__ == '__main__'):
 
     df = pd.json_normalize(all_tweets)
     if(not df.empty):
-        df = df[['id', 'created_at', 'full_text', 'retweet_count']]
+        df = df[['id', 'created_at', 'full_text']]
         df.to_csv('eltweets/' + str(uuid.uuid4()) + '.csv', index=False)
