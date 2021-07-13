@@ -45,8 +45,7 @@ def get_tweets(user_id, younger):
 
 
 if(__name__ == '__main__'):
-
-    base_path_to_csv = os.path.join(os.getcwd() + '/eltweets/*.csv')
+    base_path_to_csv = os.path.join(os.getcwd() + '/exported/emtweets/*.csv')
     csv_list = glob.glob(base_path_to_csv)
 
     min_idx = None
@@ -56,8 +55,8 @@ if(__name__ == '__main__'):
         df = pd.concat(df_list)
         min_idx = df.index.min() - 1
 
-    auth = tweepy.AppAuthHandler('JxsnGH3OKGAJL3PqvFv8B7fSz',
-                                 'hgp8u1ndFlj40GN2G84n1Sf5TXbqPDJ1uTANppwCkIEsxTJtbE')
+    auth = tweepy.AppAuthHandler(os.environ['TWITTER_API_KEY'],
+                                 os.environ['TWITTER_API_SECRET'])
     api = tweepy.API(auth)
 
     user = api.get_user('elonmusk')
