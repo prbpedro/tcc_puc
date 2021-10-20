@@ -1,4 +1,4 @@
-# Estudo sobre análise preditiva classificatória de notícias falsas - Pedro Ribeiro Baptista
+# tcc_puc
  
 ## Contextualização
 Este repositório tem como objetivo implementar o trabalho de conclusão de curso da Pós-graduação Lato Sensu em Ciência de Dados e Big Data (PONTIFÍCIA UNIVERSIDADE CATÓLICA DE MINAS GERAIS) feito por mim, Pedro Ribeiro Baptista.
@@ -17,18 +17,19 @@ Todos os arquivos, imagens, etc. gerados pelos Notebooks Jupyter citados estão 
  
 ## pre_processing_fake_news.ipynb
 Notebook Jupyter responsável por criar um conjunto de dados de notícias falsas, preparado para a aplicação de algoritmos classificatórios de aprendizado de máquina.
- 
+
 ## pre_processing_real_news.ipynb
 Notebook Jupyter responsável por criar um conjunto de dados de notícias verdadeiras, preparado para a aplicação de algoritmos classificatórios de aprendizado de máquina.
  
 ## running_machine_learning_models.ipynb
 Notebook Jupyter responsável executar o treinamento, teste e impressão de resultados dos modelos classificatórios Logistic Regression, K Nearest Neighbour, Naive Bayes, Support Vector Machines, Decision trees, Random Forest e Gradient Boosting.
- 
+
 ## Execução dos Notebooks Jupyter
+
 Siga os seguintes passos para a execução dos Notebooks Jupyter citados:
-* Instale o Python na versão 3.6.9
-* Instale a biblioteca virtualenv -> pip install virtualenv
-* Crie um novo ambiente de execução virtual Python -> virtualenv venv
-* Instale as bibliotecas necessárias -> pip install -r requirements.txt
-* Execute os Notebooks
+1. Instale o Python na versão 3.6.9
+1. Instale a biblioteca virtualenv -> pip install virtualenv
+1. Crie um novo ambiente de execução virtual Python -> virtualenv venv
+1. Instale as bibliotecas necessárias -> pip install -r requirements.txt
+1. Execute os Notebooks
 
