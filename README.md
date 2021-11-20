@@ -3,7 +3,7 @@
 ## Contextualização
 Este repositório tem como objetivo implementar o trabalho de conclusão de curso da Pós-graduação Lato Sensu em Ciência de Dados e Big Data (PONTIFÍCIA UNIVERSIDADE CATÓLICA DE MINAS GERAIS) feito por mim, Pedro Ribeiro Baptista.
  
-O mesmo pode ser encontrada no sítio [https://docs.google.com/document/d/1wKhlsfP-QhWl9LchBUDt3FXOAZAf1OIFISSvVzqS1CY/edit?usp=sharing](https://docs.google.com/document/d/1wKhlsfP-QhWl9LchBUDt3FXOAZAf1OIFISSvVzqS1CY/edit?usp=sharing).
+O mesmo pode ser encontrada no sítio [https://docs.google.com/document/d/1wKhlsfP-QhWl9LchBUDt3FXOAZAf1OIFISSvVzqS1CY/edit](https://docs.google.com/document/d/1wKhlsfP-QhWl9LchBUDt3FXOAZAf1OIFISSvVzqS1CY/edit).
  
 ## Objetivo
 O trabalho se consiste em um estudo sobre análise preditiva classificatória de notícias falsas.
@@ -22,7 +22,7 @@ Notebook Jupyter responsável por criar um conjunto de dados de notícias falsas
 Notebook Jupyter responsável por criar um conjunto de dados de notícias verdadeiras, preparado para a aplicação de algoritmos classificatórios de aprendizado de máquina.
  
 ## running_machine_learning_models.ipynb
-Notebook Jupyter responsável executar o treinamento, teste e impressão de resultados dos modelos classificatórios Logistic Regression, K Nearest Neighbour, Naive Bayes, Support Vector Machines, Decision trees, Random Forest e Gradient Boosting.
+Notebook Jupyter responsável executar o treinamento, teste e impressão de resultados dos modelos classificatórios Logistic Regression, Support Vector Machines e Decision trees.
 
 ## Execução dos Notebooks Jupyter
 
