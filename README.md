@@ -3,7 +3,7 @@
 ## Contextualização
 Este repositório tem como objetivo implementar o trabalho de conclusão de curso da Pós-graduação Lato Sensu em Ciência de Dados e Big Data (PONTIFÍCIA UNIVERSIDADE CATÓLICA DE MINAS GERAIS) feito por mim, Pedro Ribeiro Baptista.
  
-O mesmo pode ser encontrada no sítio [https://docs.google.com/document/d/1wKhlsfP-QhWl9LchBUDt3FXOAZAf1OIFISSvVzqS1CY/edit](https://docs.google.com/document/d/1wKhlsfP-QhWl9LchBUDt3FXOAZAf1OIFISSvVzqS1CY/edit).
+O mesmo pode ser encontrada no sítio [https://github.com/prbpedro/tcc_puc/blob/main/TCC%20Ci%C3%AAncia%20de%20Dados%20PUCMG%20-%20Pedro%20Ribeiro%20Baptista.pdf](https://github.com/prbpedro/tcc_puc/blob/main/TCC%20Ci%C3%AAncia%20de%20Dados%20PUCMG%20-%20Pedro%20Ribeiro%20Baptista.pdf).
  
 ## Objetivo
 O trabalho se consiste em um estudo sobre análise preditiva classificatória de notícias falsas.
